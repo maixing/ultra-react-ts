@@ -1,0 +1,72 @@
+{
+	"name": "ultra-react-ts",
+	"version": "1.0.0",
+	"description": "ultra-react-ts",
+	"scripts": {
+		"start": "cross-env NODE_ENV=development cross-env PORT=9999 webpack-dev-server --inline --config script/webpack.dev.js",
+		"build": "npm run clean && cross-env NODE_ENV=production webpack --mode production --config ./script/webpack.pro.js  -p",
+		"clean": "rimraf dist/*"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git@github.com:maixing/ultra-react-ts.git"
+	},
+	"keywords": [],
+	"author": "maixing",
+	"license": "ISC",
+	"sideEffects": [
+		"**/*.css",
+		"**/*.less",
+		"**/*.svg",
+		"./src/index.tsx"
+	],
+	"dependencies": {
+		"@antv/g6": "^3.0.6",
+		"antd": "^3.23.4",
+		"lodash": "^4.17.15",
+		"react": "^16.9.0",
+		"react-dom": "^16.9.0",
+		"rxjs": "^6.5.3"
+	},
+	"devDependencies": {
+		"@babel/core": "^7.6.2",
+		"@babel/plugin-proposal-class-properties": "^7.5.5",
+		"@babel/plugin-syntax-dynamic-import": "^7.2.0",
+		"@babel/plugin-transform-react-jsx": "^7.3.0",
+		"@babel/plugin-transform-runtime": "^7.6.2",
+		"@babel/polyfill": "^7.6.0",
+		"@babel/preset-env": "^7.6.2",
+		"@babel/preset-react": "^7.0.0",
+		"@babel/preset-stage-0": "^7.0.0",
+		"@types/react": "^16.9.3",
+		"@types/react-dom": "^16.9.1",
+		"autoprefixer": "9.6.1",
+		"autoprefixer-loader": "3.2.0",
+		"babel-loader": "^8.0.6",
+		"cross-env": "^6.0.0",
+		"css-loader": "^3.2.0",
+		"cssnano": "4.1.10",
+		"file-loader": "^4.2.0",
+		"html-webpack-plugin": "^4.0.0-alpha",
+		"less": "^2.7.3",
+		"less-loader": "5.0.0",
+		"mini-css-extract-plugin": "^0.8.0",
+		"open-browser-webpack-plugin": "0.0.5",
+		"optimize-css-assets-webpack-plugin": "^5.0.3",
+		"path": "^0.12.7",
+		"postcss-loader": "3.0.0",
+		"rimraf": "^3.0.0",
+		"style-loader": "^1.0.0",
+		"svg-inline-loader": "^0.8.0",
+		"terser-webpack-plugin": "^2.1.0",
+		"ts-loader": "^6.1.2",
+		"typescript": "^3.6.3",
+		"uglifyjs-webpack-plugin": "^2.2.0",
+		"url-loader": "^2.1.0",
+		"webpack": "^4.41.0",
+		"webpack-cli": "^3.3.9",
+		"webpack-dev-server": "^3.8.1",
+		"webpack-merge": "^4.2.2",
+		"webpackbar": "^4.0.0"
+	}
+}
