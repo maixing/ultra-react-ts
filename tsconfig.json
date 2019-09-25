@@ -23,6 +23,7 @@
     "node_modules",
     "dist",
     "script",
+    "test",
     "webpack",
     "jest"
   ]
