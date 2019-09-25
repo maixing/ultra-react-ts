@@ -21,7 +21,6 @@ const pro = {
 		rules: [
 			{
 				test: /\.less$/,
-				include: [resolve("src")],
 				use: [
 					MiniCssExtractPlugin.loader,
 					{

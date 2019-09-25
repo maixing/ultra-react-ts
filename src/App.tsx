@@ -1,6 +1,5 @@
 import * as React from "react";
-// import {Button} from "antd";
-import Button from 'antd/es/button';
+import {Button} from "antd";
 import "./App.less";
 const logo = require("./logo.svg");
 
@@ -28,8 +27,7 @@ class App extends React.Component<IProps, IState> {
 			<div className="App">
 				<header className="App-header">
 					<img src={logo} className="App-logo" alt="logo" />
-					<h1 className="App-title">欢迎</h1>
-					<Button>测试</Button>
+					<h1 className="App-title"><Button>欢迎</Button></h1>
 				</header>
 				<p className="App-intro">
 					To get started, edit <code>src/App.tsx</code> and save to reload.

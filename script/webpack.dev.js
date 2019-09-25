@@ -4,6 +4,7 @@
  *
  */
 const path = require("path");
+const webpack = require("webpack");
 const baseWebpack = require("./webpack.base");
 const merge = require("webpack-merge");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
@@ -27,7 +28,6 @@ let dev = {
 		rules: [
 			{
 				test: /\.less$/,
-				include: [resolve("src")],
 				use: [
 					{
 						loader: "style-loader"
@@ -86,6 +86,9 @@ let dev = {
 				removeAttributeQuotes: true
 			}
 		}),
+		new webpack.NoEmitOnErrorsPlugin(),
+		new webpack.NamedModulesPlugin(),
+		new webpack.HotModuleReplacementPlugin(),
 		new OpenBrowserPlugin({ url: "http://localhost:" + process.env.PORT })
 	]
 };

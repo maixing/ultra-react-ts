@@ -6,6 +6,8 @@
 const path = require("path");
 const WebpackBar = require("webpackbar");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const tsImportPluginFactory = require("ts-import-plugin");
+
 function resolve(url) {
 	return path.resolve(__dirname, "../" + url);
 }
@@ -25,7 +27,27 @@ module.exports = {
 				exclude: [resolve("node_modules"), resolve("node_modules/@antv")],
 				use: "babel-loader"
 			},
-			{ test: /\.tsx?$/, loader: "ts-loader", include: resolve("src") },
+			{
+				test: /\.tsx?$/,
+				loader: "ts-loader",
+				options: {
+					transpileOnly: true,
+					getCustomTransformers: () => ({
+						before: [
+							tsImportPluginFactory({
+								libraryName: "antd",
+								libraryDirectory: "lib",
+								style: true
+							})
+						]
+					}),
+					compilerOptions: {
+						module: "es2015"
+					}
+				},
+				include: resolve("src"),
+				exclude: /node_modules/
+			},
 			{
 				test: /\.(png|jpg|gif|svg)$/i,
 				use: [
