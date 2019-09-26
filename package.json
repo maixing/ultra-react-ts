@@ -17,8 +17,7 @@
 	"sideEffects": [
 		"**/*.css",
 		"**/*.less",
-		"**/*.svg",
-		"./src/index.tsx"
+		"**/*.svg"
 	],
 	"dependencies": {
 		"@antv/g6": "^3.0.6",
@@ -47,6 +46,7 @@
 		"css-loader": "^3.2.0",
 		"cssnano": "4.1.10",
 		"file-loader": "^4.2.0",
+		"friendly-errors-webpack-plugin": "^1.7.0",
 		"html-webpack-plugin": "^4.0.0-alpha",
 		"less": "^2.7.3",
 		"less-loader": "5.0.0",
@@ -54,6 +54,7 @@
 		"open-browser-webpack-plugin": "0.0.5",
 		"optimize-css-assets-webpack-plugin": "^5.0.3",
 		"path": "^0.12.7",
+		"portfinder": "^1.0.24",
 		"postcss-loader": "3.0.0",
 		"react-hot-loader": "^4.12.14",
 		"rimraf": "^3.0.0",

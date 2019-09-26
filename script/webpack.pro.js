@@ -15,7 +15,7 @@ const pro = {
 	devtool: false,
 	mode: "production",
 	entry: {
-		app: [resolve("src/index.tsx")]
+		app: ["@babel/polyfill",resolve("src/index.tsx")]
 	},
 	module: {
 		rules: [

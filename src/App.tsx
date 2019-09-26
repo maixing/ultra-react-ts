@@ -1,6 +1,7 @@
 import * as React from "react";
 import {Button} from "antd";
 import "./App.less";
+
 const logo = require("./logo.svg");
 
 export interface IProps {
@@ -22,7 +23,6 @@ class App extends React.Component<IProps, IState> {
 		};
 	  }
 	public render() {
-		console.log(this);
 		return (
 			<div className="App">
 				<header className="App-header">

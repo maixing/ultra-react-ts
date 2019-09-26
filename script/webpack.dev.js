@@ -9,6 +9,8 @@ const baseWebpack = require("./webpack.base");
 const merge = require("webpack-merge");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const OpenBrowserPlugin = require("open-browser-webpack-plugin");
+const portfinder = require("portfinder");
+const FriendlyErrorsPlugin = require("friendly-errors-webpack-plugin");
 
 function resolve(url) {
 	return path.resolve(__dirname, "../" + url);
@@ -92,4 +94,22 @@ let dev = {
 		new OpenBrowserPlugin({ url: "http://localhost:" + process.env.PORT })
 	]
 };
-module.exports = merge(baseWebpack, dev);
+const config = merge(baseWebpack, dev);
+module.exports = new Promise((resolve, reject) => {
+	portfinder.basePort = parseInt(process.env.PORT);
+	portfinder.getPort((err, port) => {
+	  if (err) {
+		reject(err);
+	  } else {
+		config.devServer.port = port;
+		config.plugins.push(
+		  new FriendlyErrorsPlugin({
+			compilationSuccessInfo: {
+			  messages: [`程序已经启动，访问地址为: http://localhost:${port}`]
+			}
+		  })
+		);
+		resolve(config);
+	  }
+	});
+  });
