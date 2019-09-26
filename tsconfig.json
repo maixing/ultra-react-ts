@@ -1,5 +1,6 @@
 {
   "compilerOptions": {
+    "experimentalDecorators": true,
     "baseUrl": ".",
     "outDir": "build/dist",
     "module": "ESNext",
@@ -17,7 +18,14 @@
     "importHelpers": true,
     "strictNullChecks": true,
     "suppressImplicitAnyIndexErrors": true,
-    "noUnusedLocals": true
+    "noUnusedLocals": true,
+    "paths": {
+			"@/*": ["src/*"],
+			"views/*": ["src/views/*"],
+			"store/*": ["src/stores/*"],
+			"service/*": ["src/service/*"],
+			"components/*": ["src/components/*"]
+		}
   },
   "exclude": [
     "node_modules",

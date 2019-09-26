@@ -1,39 +1,24 @@
+/**
+* 
+* Created by maixing on 2019/09/26 11:44:10
+*
+*/
 import * as React from "react";
-import {Button} from "antd";
-import "./App.less";
 
-const logo = require("./logo.svg");
+import { ConfigProvider } from "antd";
+import { Provider } from "mobx-react";
 
-export interface IProps {
-	name: string;
-	enthusiasmLevel?: number;
-}
+import appstore from "./stores/AppStore";
+import Routes from "./router/routes";
+import zhCN from "antd/es/locale/zh_CN";
 
-interface IState {
-	name:string;
-	currentEnthusiasm: number;
-}
+import "./style/customer_ant.less";
+import "./style/magic.css";
 
-class App extends React.Component<IProps, IState> {
-	constructor(props: IProps) {
-		super(props);
-		this.state = {
-			name:props.name,
-			currentEnthusiasm:0
-		};
-	  }
-	public render() {
-		return (
-			<div className="App">
-				<header className="App-header">
-					<img src={logo} className="App-logo" alt="logo" />
-					<h1 className="App-title"><Button>欢迎</Button></h1>
-				</header>
-				<p className="App-intro">
-					To get started, edit <code>src/App.tsx</code> and save to reload.
-				</p>
-			</div>
-		);
-	}
-}
-export default App;
+export default (
+	<ConfigProvider locale={zhCN}>
+		<Provider {...appstore}>
+			<Routes></Routes>
+		</Provider>
+	</ConfigProvider>
+);

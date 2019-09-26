@@ -21,10 +21,14 @@
 	],
 	"dependencies": {
 		"@antv/g6": "^3.0.6",
+		"@types/react-router": "^3.0.20",
 		"antd": "^3.23.4",
 		"lodash": "^4.17.15",
+		"mobx": "^4.13.0",
+		"mobx-react": "^5.4.4",
 		"react": "^16.9.0",
 		"react-dom": "^16.9.0",
+		"react-router": "^3.2.0",
 		"rxjs": "^6.5.3"
 	},
 	"devDependencies": {

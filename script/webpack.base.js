@@ -1,8 +1,8 @@
 /**
- *
- * Created by maixing on 2019/08/09 15:52:01
- *
- */
+* 
+* Created by maixing on 2019/09/26 11:42:20
+*
+*/
 const path = require("path");
 const WebpackBar = require("webpackbar");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
@@ -17,7 +17,11 @@ module.exports = {
 		modules: [path.resolve(__dirname, "../node_modules"), resolve("src")],
 		extensions: [".js", ".ts", ".tsx", ".css", ".less"],
 		alias: {
-			"@": resolve("src")
+			"@": resolve("src"),
+			"views":resolve("src/views"),
+			"store":resolve("src/stores"),
+			"service":resolve("src/service"),
+			"components":resolve("src/components")
 		}
 	},
 	module: {
