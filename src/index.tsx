@@ -4,7 +4,7 @@
 *
 */
 import * as ReactDOM from "react-dom";
-import App from "./app";
+import App from "./App";
 import "./index.less";
 ReactDOM.render(App, document.getElementById("app") as HTMLElement);
 if (module["hot"]) {
