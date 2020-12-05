@@ -8,7 +8,7 @@ const CssNaNo              = require('cssnano')
 module.exports = {
     plugins: [
         AutoPreFixer({
-            browsers: ['> 1%', 'last 5 version'],
+            overrideBrowserslist: ['> 0.15% in CN'],
             cascade : false
         }),
         CssNaNo()
